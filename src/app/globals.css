@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+:root {
+  --rex-red: #DC2626;
+  --rex-red-light: #EF4444;
+  --rex-bg: #0A0A0A;
+  --rex-bg-light: #1A1A1A;
+  --rex-glass: rgba(255, 255, 255, 0.05);
+  --rex-border: rgba(255, 255, 255, 0.1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--rex-bg);
+  color: #E5E5E5;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--rex-bg); }
+::-webkit-scrollbar-thumb { background: var(--rex-red); border-radius: 3px; }
+
+/* Glass card */
+.glass {
+  background: var(--rex-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--rex-border);
+  border-radius: 16px;
+}
+
+/* Red gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--rex-red), var(--rex-red-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effect */
+.glow-red {
+  box-shadow: 0 0 60px rgba(220, 38, 38, 0.15), 0 0 120px rgba(220, 38, 38, 0.05);
+}
+
+/* Subtle pulse animation */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+.animate-pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+
+/* Grid background */
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
